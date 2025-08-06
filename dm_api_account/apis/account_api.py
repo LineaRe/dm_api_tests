@@ -6,45 +6,33 @@ class AccountApi:
         self.host = host
         self.headers = headers
 
-    def post_v1_account(self, json_data):
+    def post_v1_account(self, json_data, **kwargs):
         """
         Register new user
         :param json_data:
         :return:
         """
-        response = requests.post(url=f'{self.host}/v1/account', json=json_data)
+        response = requests.post(url=f'{self.host}/v1/account', json=json_data, **kwargs)
         return response
 
 
-    def put_v1_account_token(self, token):
-        headers = {
-            'accept': 'text/plain'}
+    def put_v1_account_token(self, token, **kwargs):
+
         """
         Activate registred user
         :param json_data:
         :return:
         """
-        response = requests.put(url=f'{self.host}/v1/account/{token}', headers=headers)
+        response = requests.put(url=f'{self.host}/v1/account/{token}', **kwargs)
         return response
 
 
-    def put_v1_account_email(self, login, email, password):
-        headers = {
-            'accept': 'text/plain'
-        }
+    def put_v1_account_email(self, json_data, **kwargs):
 
         """
         Change registered user email
         :param json_data:
         :return:
         """
-
-        json_data = {
-            'login': login,
-            'email': email,
-            'password': password,
-        }
-
-        response = requests.put(url=f'{self.host}/v1/account/email', headers=headers, json=json_data)
+        response = requests.put(url=f'{self.host}/v1/account/email', json=json_data, **kwargs)
         return response
-

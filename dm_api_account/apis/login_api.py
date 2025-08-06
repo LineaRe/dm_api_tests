@@ -7,11 +7,11 @@ class LoginApi:
         self.headers = headers
 
 
-    def post_v1_account_login(self, json_data):
+    def post_v1_account_login(self, json_data, **kwargs):
         """
         Authenticate via credentials
         :param json_data:
         :return:
         """
-        response = requests.post(url=f'{self.host}/v1/account/login', json=json_data)
+        response = requests.post(url=f'{self.host}/v1/account/login', json=json_data, **kwargs)
         return response

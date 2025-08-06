@@ -23,7 +23,7 @@ def test_put_v1_account_login():
     login_api = LoginApi(host='http://5.63.153.31:5051')
     mailhog_api = MailhogApi(host='http://5.63.153.31:5025')
 
-    login = 'reyner_test12'
+    login = 'reyner_test15'
     email = f'{login}@mail.ru'
     password = '123456789'
     json_data = {
@@ -79,9 +79,15 @@ def test_put_v1_account_login():
 
 
     # Изменить емейл
-
     new_email = f'{login}_new@mail.ru'
-    response = account_api.put_v1_account_email(login=login, password=password, email=new_email)
+
+    json_data = {
+        'login': login,
+        'email': new_email,
+        'password': password
+    }
+
+    response = account_api.put_v1_account_email(json_data=json_data)
     print(response.status_code)
     print(response.text)
     assert response.status_code == 200, "Не удалось изменить email"
