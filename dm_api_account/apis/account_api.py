@@ -26,3 +26,25 @@ class AccountApi:
         """
         response = requests.put(url=f'{self.host}/v1/account/{token}', headers=headers)
         return response
+
+
+    def put_v1_account_email(self, login, email, password):
+        headers = {
+            'accept': 'text/plain'
+        }
+
+        """
+        Change registered user email
+        :param json_data:
+        :return:
+        """
+
+        json_data = {
+            'login': login,
+            'email': email,
+            'password': password,
+        }
+
+        response = requests.put(url=f'{self.host}/v1/account/email', headers=headers, json=json_data)
+        return response
+
