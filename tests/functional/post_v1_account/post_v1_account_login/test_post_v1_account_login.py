@@ -4,7 +4,7 @@ from dm_api_account.apis.login_api import LoginApi
 from api_mailhog.apis.mailhog_api import MailhogApi
 
 
-def test_post_v1_account():
+def test_post_v1_account_login():
 
     # Регистрация пользователя
 
@@ -12,7 +12,7 @@ def test_post_v1_account():
     login_api = LoginApi(host='http://5.63.153.31:5051')
     mailhog_api = MailhogApi(host='http://5.63.153.31:5025')
 
-    login = 'reyner_test20'
+    login = 'reyner_test22'
     email = f'{login}@mail.ru'
     password = '123456789'
     json_data = {
@@ -74,3 +74,4 @@ def get_activation_token_by_login(login, response):
         if user_login == login:
             token = user_data['ConfirmationLinkUrl'].split('/')[-1]
     return token
+

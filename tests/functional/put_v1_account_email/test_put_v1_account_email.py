@@ -23,7 +23,7 @@ def test_put_v1_account_login():
     login_api = LoginApi(host='http://5.63.153.31:5051')
     mailhog_api = MailhogApi(host='http://5.63.153.31:5025')
 
-    login = 'reyner_test15'
+    login = 'reyner_test21'
     email = f'{login}@mail.ru'
     password = '123456789'
     json_data = {
