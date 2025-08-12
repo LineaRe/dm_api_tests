@@ -15,7 +15,7 @@ def get_activation_token_by_login(login, response):
     return token
 
 
-def test_put_v1_account_login():
+def test_put_v1_account_email():
 
     # Регистрация пользователя
 

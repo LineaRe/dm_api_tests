@@ -14,7 +14,7 @@ def get_activation_token_by_login(login, response):
             token = user_data['ConfirmationLinkUrl'].split('/')[-1]
     return token
 
-def test_post_v1_account():
+def test_put_v1_account_token():
 
     # Регистрация пользователя
 
